@@ -1,0 +1,29 @@
+GET http://localhost:3007/api/v1/movies
+
+###
+POST http://localhost:3007/api/v1/movies
+Content-Type: application/json
+
+{
+	"title": "John Wick I",
+	"rating": 8.5
+}
+
+###
+POST http://localhost:3007/api/v1/user/signup
+Content-Type: application/json
+
+{
+	"name": "Damilola",
+	"email": "calculus@gmail.com",
+	"password": "maikel"
+}
+
+###
+POST http://localhost:3007/api/v1/user/login
+Content-Type: application/json
+
+{
+	"email": "calculus@gmail.com",
+	"password": "maikel"
+}
