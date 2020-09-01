@@ -1,29 +1,50 @@
 GET http://localhost:3007/api/v1/movies
 
 ###
-POST http://localhost:3007/api/v1/movies
+GET http://localhost:3007/api/v1/movies/5f4aefa9546dca465f266754
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNhbGNAZ21haWwuY29tIiwiaWQiOiI1ZjRiYmNmNThhZmVjODUxNzUwMzU5Y2IiLCJpYXQiOjE1OTg5OTQ0MDAsImV4cCI6MTU5ODk5ODAwMH0.az6ps1_Qf_vJKQibHEjh2PIt5FTz0vV_UoNQzH8KOdk
+
+###
+POST http://localhost:3007/api/v1/movies/5f4aefa9546dca465f266754
 Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNhbGNAZ21haWwuY29tIiwiaWQiOiI1ZjRiYmNmNThhZmVjODUxNzUwMzU5Y2IiLCJpYXQiOjE1OTg5OTQ0MDAsImV4cCI6MTU5ODk5ODAwMH0.az6ps1_Qf_vJKQibHEjh2PIt5FTz0vV_UoNQzH8KOdk
 
 {
-	"title": "John Wick I",
-	"rating": 8.5
+	"title": "Game of thrones",
+	"rating": 9.5
 }
 
 ###
-POST http://localhost:3007/api/v1/user/signup
+PUT http://localhost:3007/api/v1/movies/5f4e74a1318778aa244984f2
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNhbGNAZ21haWwuY29tIiwiaWQiOiI1ZjRiYmNmNThhZmVjODUxNzUwMzU5Y2IiLCJpYXQiOjE1OTg5OTQ0MDAsImV4cCI6MTU5ODk5ODAwMH0.az6ps1_Qf_vJKQibHEjh2PIt5FTz0vV_UoNQzH8KOdk
+
+{
+	"rating": 7.5
+}
+
+###
+DELETE http://localhost:3007/api/v1/movies/5f4afb2cda82b04a691fc8e3
+
+###
+POST http://localhost:3007/api/v1/users/signup
 Content-Type: application/json
 
 {
 	"name": "Damilola",
-	"email": "calculus@gmail.com",
+	"email": "calcu@gmail.com",
 	"password": "maikel"
 }
 
 ###
-POST http://localhost:3007/api/v1/user/login
+POST http://localhost:3007/api/v1/users/login
 Content-Type: application/json
 
 {
-	"email": "calculus@gmail.com",
+	"email": "calc@gmail.com",
 	"password": "maikel"
 }
+
+###
+GET http://localhost:3007/api/v1/users
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNhbGNAZ21haWwuY29tIiwiaWQiOiI1ZjRiYmNmNThhZmVjODUxNzUwMzU5Y2IiLCJpYXQiOjE1OTg5OTQ0MDAsImV4cCI6MTU5ODk5ODAwMH0.az6ps1_Qf_vJKQibHEjh2PIt5FTz0vV_UoNQzH8KOdk

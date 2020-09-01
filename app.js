@@ -1,9 +1,9 @@
 const express = require('express')
 const cors = require('cors')
 const mongoose = require('mongoose')
-const { unknownEndpoint, errorHandler } = require('./utils/middleware')
 const moviesRouter = require('./routes/movie')
 const userRouter = require('./routes/user')
+const { unknownEndpoint, errorHandler } = require('./utils/middleware')
 const { url } = require('./utils/config')
 const { info, errorlog } = require('./utils/logger')
 

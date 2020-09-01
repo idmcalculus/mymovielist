@@ -1,10 +1,11 @@
 const mongoose = require('mongoose')
 const uniqueValidator = require('mongoose-unique-validator')
+const Schema = mongoose.Schema;
 
 mongoose.set('useFindAndModify', false)
 mongoose.set('useCreateIndex', true)
 
-const userSchema = new mongoose.Schema({
+const userSchema = new Schema({
 	name: {
 		type: String,
 		required: true,
@@ -22,9 +23,23 @@ const userSchema = new mongoose.Schema({
 	token: {
         type: String,
         required: true
-    }
+	},
+	movies: [{
+		type: Schema.Types.ObjectId,
+    	ref: 'Movie'
+	}]
+}, { timestamps: true })
+
+userSchema.set('toJSON', {
+	transform: (document, returnedObject) => {
+	  returnedObject.id = returnedObject._id.toString()
+	  delete returnedObject._id
+	  delete returnedObject.__v
+	}
 })
 
 userSchema.plugin(uniqueValidator)
 
-module.exports = mongoose.model('User', userSchema)
+const User = mongoose.model('User', userSchema)
+
+module.exports = User

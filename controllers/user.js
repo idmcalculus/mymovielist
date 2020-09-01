@@ -27,7 +27,7 @@ class UserController {
 			const salt = await bcrypt.genSalt(10);
 			const hashedPassword = await bcrypt.hash(user.password, salt);
 			user.password = hashedPassword;
-			const accessToken = jwt.sign({email: user.email, userId: user._id }, jwtKey, { expiresIn: '24hr' });
+			const accessToken = jwt.sign({email: user.email, userId: user.id }, jwtKey, { expiresIn: '24hr' });
             user.token = accessToken;
 			await user.save();
 			return res
@@ -66,21 +66,38 @@ class UserController {
 					}
 				});
 			}
-			const accessToken = jwt.sign({email: user.email, _id: user._id, role: user.role}, jwtKey, { expiresIn: "1hr" });
-			const result = await User.findByIdAndUpdate(user._id, {token: accessToken}, { new: true });
+			const accessToken = jwt.sign({email: user.email, id: user.id}, jwtKey, { expiresIn: "1hr" });
+			const result = await User.findByIdAndUpdate(user.id, {token: accessToken}, { new: true });
 				res
-				.header("x-auth-token", accessToken)
+				.header("auth", accessToken)
                 .status(200)
                 .json({
 				status: 'success',
 				data: {
 					message: `${result.email} logged in successfully`,
-					_id: result._id,
+					id: result.id,
 					token: result.token
 				}
 			});
 		} catch (error) {
 			next(error);
+		}
+	}
+
+	static async allUsers (req, res, next) {
+		try {
+			const users = await User.find({})
+			res
+			.status(200)
+			.json({
+				status: "success",
+				data: {
+					message: "users fetched successfully",
+					users
+				}
+			})
+		} catch (error) {
+			next(error)
 		}
 	}
 }
