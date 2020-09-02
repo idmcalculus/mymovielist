@@ -1,50 +1,51 @@
-GET http://localhost:3007/api/v1/movies
+GET https://calcmovies.herokuapp.com/api/v1/movies
 
 ###
-GET http://localhost:3007/api/v1/movies/5f4aefa9546dca465f266754
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNhbGNAZ21haWwuY29tIiwiaWQiOiI1ZjRiYmNmNThhZmVjODUxNzUwMzU5Y2IiLCJpYXQiOjE1OTg5OTQ0MDAsImV4cCI6MTU5ODk5ODAwMH0.az6ps1_Qf_vJKQibHEjh2PIt5FTz0vV_UoNQzH8KOdk
+GET https://calcmovies.herokuapp.com/api/v1/movies/5f4bbcf58afec851750359cb
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNhbGNAZ21haWwuY29tIiwiaWQiOiI1ZjRiYmNmNThhZmVjODUxNzUwMzU5Y2IiLCJpYXQiOjE1OTkwMjM2NDEsImV4cCI6MTU5OTAyNzI0MX0.gC82_ASUiFgVd0byKRlOupb1JUPa1p0qy5Qxd2ebwGQ
 
 ###
-POST http://localhost:3007/api/v1/movies/5f4aefa9546dca465f266754
+POST https://calcmovies.herokuapp.com/api/v1/movies/5f4bbcf58afec851750359cb
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNhbGNAZ21haWwuY29tIiwiaWQiOiI1ZjRiYmNmNThhZmVjODUxNzUwMzU5Y2IiLCJpYXQiOjE1OTg5OTQ0MDAsImV4cCI6MTU5ODk5ODAwMH0.az6ps1_Qf_vJKQibHEjh2PIt5FTz0vV_UoNQzH8KOdk
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNhbGNAZ21haWwuY29tIiwiaWQiOiI1ZjRiYmNmNThhZmVjODUxNzUwMzU5Y2IiLCJpYXQiOjE1OTkwMjM2NDEsImV4cCI6MTU5OTAyNzI0MX0.gC82_ASUiFgVd0byKRlOupb1JUPa1p0qy5Qxd2ebwGQ
 
 {
-	"title": "Game of thrones",
-	"rating": 9.5
+	"title": "Star Wars",
+	"rating": 9
 }
 
 ###
-PUT http://localhost:3007/api/v1/movies/5f4e74a1318778aa244984f2
+PUT https://calcmovies.herokuapp.com/api/v1/movies/5f4ecd882645630004007a4e
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNhbGNAZ21haWwuY29tIiwiaWQiOiI1ZjRiYmNmNThhZmVjODUxNzUwMzU5Y2IiLCJpYXQiOjE1OTg5OTQ0MDAsImV4cCI6MTU5ODk5ODAwMH0.az6ps1_Qf_vJKQibHEjh2PIt5FTz0vV_UoNQzH8KOdk
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNhbGNAZ21haWwuY29tIiwiaWQiOiI1ZjRiYmNmNThhZmVjODUxNzUwMzU5Y2IiLCJpYXQiOjE1OTkwMjM2NDEsImV4cCI6MTU5OTAyNzI0MX0.gC82_ASUiFgVd0byKRlOupb1JUPa1p0qy5Qxd2ebwGQ
 
 {
-	"rating": 7.5
+	"rating": 8
 }
 
 ###
-DELETE http://localhost:3007/api/v1/movies/5f4afb2cda82b04a691fc8e3
+DELETE https://calcmovies.herokuapp.com/api/v1/movies/5f4f3006683f6d00043bfb09
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNhbGNAZ21haWwuY29tIiwiaWQiOiI1ZjRiYmNmNThhZmVjODUxNzUwMzU5Y2IiLCJpYXQiOjE1OTkwMjM2NDEsImV4cCI6MTU5OTAyNzI0MX0.gC82_ASUiFgVd0byKRlOupb1JUPa1p0qy5Qxd2ebwGQ
 
 ###
-POST http://localhost:3007/api/v1/users/signup
+POST https://calcmovies.herokuapp.com/api/v1/users/signup
 Content-Type: application/json
 
 {
 	"name": "Damilola",
-	"email": "calcu@gmail.com",
+	"email": "jamesb@gmail.com",
 	"password": "maikel"
 }
 
 ###
-POST http://localhost:3007/api/v1/users/login
+POST https://calcmovies.herokuapp.com/api/v1/users/login
 Content-Type: application/json
 
 {
-	"email": "calc@gmail.com",
+	"email": "jamesb@gmail.com",
 	"password": "maikel"
 }
 
 ###
-GET http://localhost:3007/api/v1/users
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNhbGNAZ21haWwuY29tIiwiaWQiOiI1ZjRiYmNmNThhZmVjODUxNzUwMzU5Y2IiLCJpYXQiOjE1OTg5OTQ0MDAsImV4cCI6MTU5ODk5ODAwMH0.az6ps1_Qf_vJKQibHEjh2PIt5FTz0vV_UoNQzH8KOdk
+GET https://calcmovies.herokuapp.com/api/v1/users
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImphbWVzYkBnbWFpbC5jb20iLCJpZCI6IjVmNGYzMzg4NjgzZjZkMDAwNDNiZmIwYSIsImlhdCI6MTU5OTAyNjIxMiwiZXhwIjoxNTk5MDI5ODEyfQ.j7vi-AqrdIl2LGMNoKbJ1A_NZMXTNBegF-TF4EhbQZA

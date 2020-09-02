@@ -29,13 +29,13 @@ const mongoClient = async () => {
 mongoClient()
 
 app.use(cors())
-// app.use(express.static('build'))
 app.use(express.json())
 app.use('/api/v1', moviesRouter)
 app.use('/api/v1', userRouter)
 
 app.get('/', (req, res) => {
-  res.send('<h1>Hello World</h1>')
+  res.send(`<h1>Welcome to my movies API.</h1>
+  <p>Click <a href="https://app.swaggerhub.com/apis-docs/idmcalculus/calc-movies/1"> here </a> for the API documentation</p>`)
 })
 
 app.use(errorHandler)
